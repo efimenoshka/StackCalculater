@@ -39,12 +39,15 @@ public class Calc extends Compf {
     protected void nextOther(char c) {
 
         if (num > 1){
-            int a = s.top();
-            s.pop();
-            s.push(10*a+char2int(c));
-        }
+            int a = s.pop();
 
+            if (10*a+char2int(c) >= 4000) {
+                System.out.println("Введите др число");
+            }
+            else s.push(10*a+char2int(c));
+        }
         else s.push(char2int(c));
+
     }
 
     public Calc() {
